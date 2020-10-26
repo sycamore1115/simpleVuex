@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     name: "小明",
-    age: "23",
+    age: 23,
     address: "广东",
     job: "建筑师",
     phone:"13521452301",
@@ -23,6 +23,12 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    increment(state){
+      state.age++
+    },
+    addUser(state,user){
+      state.name = user.name;
+    }
   },
   actions: {
   },
