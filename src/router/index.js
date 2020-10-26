@@ -4,7 +4,16 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-  
+  {
+    path:'/',
+    name:'userInfo',
+    component: () => import('../views/userInfo.vue')
+  },
+  {
+    path:'/users',
+    name:'users',
+    component: () => import('../views/users.vue')
+  }
 ]
 
 const router = new VueRouter({
