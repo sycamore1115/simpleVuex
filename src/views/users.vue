@@ -2,12 +2,13 @@
   <div class="user-container">
     大家好，我是{{ name }}，我今年{{ age }}岁了，现在居住于{{
       address
-    }}，目前从事的职业是{{ job }}，很高兴认识大家！
+    }}，目前从事的职业是{{ job }}，我的电话号码是{{phoneShow}}，很高兴大家能认识我这样的{{sexShow}}！
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
@@ -59,7 +60,11 @@ export default {
   // },
   //第五种写法
   computed:{
-    ...mapState((['name','age','address','job']))
+    ...mapState(['name','age','address','job']),
+    ...mapGetters(['phoneShow']),
+    sexShow(){
+      return this.$store.getters.sexShow(0)
+    },
   }
 };
 </script>
