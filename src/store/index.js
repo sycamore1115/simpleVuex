@@ -23,11 +23,9 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    increment(state){
-      state.age++
-    },
     addUser(state,user){
-      state.name = user.name;
+      state = user;
+      // state.name = user.name;
     }
   },
   actions: {
