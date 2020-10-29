@@ -5,6 +5,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    count: 1,
+    user:{
+      name: "",
+      age: "",
+      address: "",
+      job: "",
+    },
     name: "小明",
     age: 23,
     address: "广东",
@@ -23,9 +30,11 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    increment (state) {
+      state.count++
+    },
     addUser(state,user){
-      state = user;
-      // state.name = user.name;
+      state.user = user;
     }
   },
   actions: {
